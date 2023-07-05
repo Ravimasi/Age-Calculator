@@ -1,7 +1,8 @@
 .container {
   background-color: var(--color1);
-  padding: 45px 30px;
   border-radius: 22px 22px 90px 22px;
+  max-width: 375px;
+  padding: 60px 25px;
 }
 
 .separation {

@@ -4,14 +4,18 @@
   gap: 16px;
   color: var(--color4);
   text-transform: uppercase;
+  justify-content: center;
   font-weight: 700;
+  font-size: 100%;
+}
+
+.input-data * {
+  width: 100%;
 }
 
 input {
-  width: 125px;
-  max-width: 100%;
-  font-size: var(--font-input-size) !important;
-  padding: 5px 20px;
+  font-size: calc(var(--font-input-size) - 50%) !important;
+  padding: 10px 15px;
   border-radius: 8px;
   border: 1px solid var(--color3);
 }

@@ -63,7 +63,6 @@ h6 {
 body {
   background-color: var(--color2);
   font: .9rem 'Poppins', sans-serif;
-  max-width: 375px;
   margin: 0 auto;
   display: grid;
   place-content: center;
