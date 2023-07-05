@@ -1,0 +1,23 @@
+.input-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  color: var(--color4);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+input {
+  width: 125px;
+  max-width: 100%;
+  font-size: var(--font-input-size) !important;
+  padding: 5px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--color3);
+}
+
+input:focus-visible {
+  border: 2px solid var(--purple);
+  outline: none;
+  cursor: pointer;
+}

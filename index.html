@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="shortcut icon" href="/assets/images/favicon-32x32.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <article class="input-data">
+        <label for="day" class="day-area ">D a y
+          <input type="text" name="" id="day">
+        </label>
+        <label for="month" class="month-area" >M o n t h
+          <input type="text" name="" id="month">
+        </label>
+        <label for="year" class="year-area">Y e a r
+          <input type="text" name="" id="year">
+        </label>
+      </article>
+      <div class="separation">
+        <hr>
+        <button type="button" onclick="showResult()"></button>
+    </div>
+    <section class="output-data">
+      <span id="year-result">years</span>
+      <span id="month-result">months</span>
+      <span id="day-result">days</span>
+    </section>
+  </main>
+<!-- 
+  Day
+  DD
+
+  Month
+  MM
+
+  Year
+  YYYY
+
+  -- years
+  -- months
+  -- days
+   -->
+  </div>
+</body>
+</html>

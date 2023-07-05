@@ -1,0 +1,25 @@
+# Avoid accidental upload of the Sketch and Figma design files
+#####################################################
+## Please do not remove lines 5 and 6 - thanks! 🙂 ##
+#####################################################
+*.sketch
+*.fig
+
+# Avoid accidental XD upload if you convert the design file
+###############################################
+## Please do not remove line 12 - thanks! 🙂 ##
+###############################################
+*.xd
+
+# Avoid your project being littered with annoying .DS_Store files!
+.DS_Store
+.prettierignore
+assets/images/favicon-32x32.png
+design/mobile-design.jpg
+design/desktop-preview.jpg
+design/desktop-error-whole-form.jpg
+design/desktop-error-invalid.jpg
+design/desktop-error-empty.jpg
+design/desktop-design.jpg
+design/desktop-completed.jpg
+design/active-states.jpg

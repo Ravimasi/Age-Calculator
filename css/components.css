@@ -1,0 +1,34 @@
+.container {
+  background-color: var(--color1);
+  padding: 45px 30px;
+  border-radius: 22px 22px 90px 22px;
+}
+
+.separation {
+  position: relative;
+  display: grid;
+}
+
+hr {
+  color: var(--color2);
+  margin: 80px 0;
+
+}
+
+.separation button {
+  background: url(/assets/images/icon-arrow.svg) no-repeat center;
+  stroke-width: 20;
+  border: none;
+  background-color: var(--purple);
+  padding: 40px;
+  background-size: 35px;
+  border-radius: 50%;
+  position: absolute;
+  place-self: center;
+}
+
+.separation button:hover {
+  background-color: var(--color5);
+  cursor: pointer;
+  transition: .5s ease;
+}

@@ -1,0 +1,72 @@
+@import './components.css';
+@import './input-area.css';
+@import './output-data.css';
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --l-red: hsl(0, 100%, 67%);
+  --color1: hsl(0, 0%, 100%);
+  --color2: hsl(0, 0%, 94%);
+  --color3: hsl(0, 0%, 86%);
+  --color4: hsl(0, 1%, 44%);
+  --color5: hsl(0, 0%, 8%);
+  --font-input-size: 2rem;
+}
+
+/* ☠☠☠ */
+
+body {
+  background-color: var(--color2);
+  font: .9rem 'Poppins', sans-serif;
+  max-width: 375px;
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+}
