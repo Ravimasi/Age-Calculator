@@ -1,0 +1,10 @@
+.output-data {
+  font: italic 800 3.5rem 'Poppins', sans-serif;
+  color: var(--color5);
+  display: flex;
+  flex-direction: column;
+}
+
+.output-data span {
+  color: var(--purple);
+}

@@ -1,8 +1,9 @@
 .container {
   background-color: var(--color1);
-  border-radius: 22px 22px 90px 22px;
+  border-radius: 22px 22px 110px 22px;
   max-width: 375px;
   padding: 60px 25px;
+  box-shadow: 3px 3px 10px hsla(259, 100%, 65%, 0.247);
 }
 
 .separation {
@@ -17,10 +18,8 @@ hr {
 }
 
 .separation button {
-  background: url('../assets/images/icon-arrow.svg') no-repeat center;
-  stroke-width: 20;
+  background: url('data:image/svg+xml;lf,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="%23FFF" stroke-width="4"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>') no-repeat center var(--purple);
   border: none;
-  background-color: var(--purple);
   padding: 40px;
   background-size: 35px;
   border-radius: 50%;
@@ -32,4 +31,23 @@ hr {
   background-color: var(--color5);
   cursor: pointer;
   transition: .5s ease;
+}
+
+@media screen and (min-width: 50rem) {
+  .container {
+    min-width: 56.65rem;
+    padding: 60px 55px;
+  }
+
+  .separation button {
+    background: url('data:image/svg+xml;lf,<svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="%23FFF" stroke-width="3"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>') no-repeat center var(--purple);
+    position: absolute;
+    right: 0px;
+    padding: 45px;
+    background-size: 40px;
+  }
+
+  hr {
+    margin: 50px 0px;
+  }
 }
