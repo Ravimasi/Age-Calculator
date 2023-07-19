@@ -33,9 +33,9 @@ hr {
   transition: .5s ease;
 }
 
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 48rem) {
   .container {
-    min-width: 48.65rem;
+    min-width: 46rem;
     padding: 60px 55px;
   }
 
@@ -49,5 +49,12 @@ hr {
 
   hr {
     margin: 50px 0px;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .container {
+    min-width: 50.625rem;
+    padding: 60px 55px;
   }
 }

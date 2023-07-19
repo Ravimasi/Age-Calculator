@@ -13,20 +13,46 @@
   width: 100%;
 }
 
+label {
+  /* position: relative; */
+}
+
 input {
   font-size: calc(var(--font-input-size) - 50%) !important;
   padding: 10px 15px;
   border-radius: 8px;
   border: 1px solid var(--color3);
+  appearance: textfield;
 }
 
 input:focus-visible {
-  border: 2px solid var(--purple);
+  border: 1.9px solid var(--purple);
   outline: none;
   cursor: pointer;
+  transition: .2s ease;
 }
 
-@media screen and (min-width: 50rem) {
+span[id^="error"] {
+  /* position: absolute; */
+  content: 'Eae beleza';
+  margin: 5px 0px;
+  color: red;
+  display: flex;
+  place-content: center;
+  font: italic 400 xx-small 'Poppins', sans-serif;
+  text-transform: none;
+}
+
+label.limitValue::after {
+  /* content: 'Value should be between 1~31'; */
+  justify-content: center;
+  color: red;
+  width: 25ch;
+  display: flex;
+  font-size: x-small;
+}
+
+@media screen and (min-width: 48rem) {
   input {
     display: grid;
     max-width: 100%;

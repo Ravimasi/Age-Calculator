@@ -1,10 +1,24 @@
 .output-data {
-  font: italic 800 3.5rem 'Poppins', sans-serif;
+  font: italic 800 3.5rem/1.15 'Poppins', sans-serif;
   color: var(--color5);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  /* grid-template-columns: repeat(3, min-content); */
+  /* Alternate style of showing the output, i liked but i'll stick to the proposed design */
 }
+
 
 .output-data span {
   color: var(--purple);
+}
+
+@media screen and (min-width: 48rem) {
+  .output-data {
+    font: italic 800 4.25rem/1.15 'Poppins', sans-serif;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .output-data {
+    font: italic 800 4.5rem/1.15 'Poppins', sans-serif;
+  }
 }

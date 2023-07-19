@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="./css/global.css">
+  <script defer src="/script.js"></script>
   <link rel="shortcut icon" href="/assets/images/favicon-32x32.png" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,24 +20,27 @@
 <body>
   <main class="container">
     <article class="input-data">
-        <label for="day" class="day-area ">D a y
-          <input type="text" name="" id="day">
+        <label for="day" class="day-area">D a y
+          <input type="number" name="" id="day" value="11" required autocomplete="off">
+          <span id="errorDay"></span>
         </label>
         <label for="month" class="month-area" >M o n t h
-          <input type="text" name="" id="month">
+          <input type="number" name="" id="month" value="10" required autocomplete="off">
+          <span id="errorMonth"></span>
         </label>
         <label for="year" class="year-area">Y e a r
-          <input type="text" name="" id="year">
+          <input type="number" name="" id="year" value="2001" required autocomplete="off">
+          <span id="errorYear"></span>
         </label>
       </article>
       <div class="separation">
         <hr>
-        <button type="button" onclick="showResult()"></button>
-    </div>
+        <button type="button"></button>
+      </div>
     <section class="output-data">
-      <p id="year-result"><span>- - </span> years</p><br>
-      <p id="month-result"><span>- - </span> months</p><br>
-      <p id="day-result"><span>- - </span> days</p><br>
+      <p><span id="year-result">- - </span> years</p>
+      <p><span id="month-result">- - </span> months</p>
+      <p><span id="day-result">- - </span> days</p>
     </section>
   </main>
 <!-- 
