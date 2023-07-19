@@ -12,6 +12,7 @@ const yearInput = document.getElementById("year");
 const errorDay = document.querySelector("#errorDay");
 const errorMonth = document.querySelector("#errorMonth");
 const errorYear = document.querySelector("#errorYear");
+const errorInput = document.querySelectorAll("input");
 let resultYear = document.querySelector("#year-result");
 let resultMonth = document.querySelector("#month-result");
 let resultDay = document.querySelector("#day-result");
@@ -35,21 +36,6 @@ const calcAge = () => {
 
 const button = document.querySelector("button");
 button.addEventListener("click", (e) => {
-  if (
-    dayInput.value.trim() == "" ||
-    monthInput.value.trim() == "" ||
-    yearInput.value.trim() == ""
-  ) {
-    if (yearInput.value == "") {
-      errorYear.innerHTML = "This field is required";
-    }
-    if (monthInput.value == "") {
-      errorMonth.innerHTML = "This field is required";
-    }
-    if (dayInput.value == "") {
-      errorDay.innerHTML = "This field is required";
-    }
-  }
   dayValue = parseInt(dayInput.value);
   monthValue = parseInt(monthInput.value);
   yearValue = parseInt(yearInput.value);
@@ -63,24 +49,44 @@ button.addEventListener("click", (e) => {
   } else {
     errorDay.innerHTML = "";
   }
+  if (
+    dayInput.value.trim() == "" ||
+    monthInput.value.trim() == "" ||
+    yearInput.value.trim() == ""
+  ) {
+    if (dayInput.value == "") {
+      errorDay.innerHTML = "This field is required";
+    }
+    if (monthInput.value == "") {
+      errorMonth.innerHTML = "This field is required";
+    }
+    if (yearInput.value == "") {
+      errorYear.innerHTML = "This field is required";
+    }
+  }
 });
 dayInput.addEventListener("input", () => {
-  dayInput.value < 1 || dayInput.value > 31
-    ? (errorDay.innerHTML = "Not a valid day")
-    : (errorDay.innerHTML = "");
+  dayInput.value < 1 ||
+  dayInput.value > 31 ||
+  dayValue > new Date(yearValue, monthValue, 0).getDate()
+    ? ((errorDay.innerHTML = "Not a valid day"), errorState())
+    : ((errorDay.innerHTML = ""), noError(this));
 });
 monthInput.addEventListener("input", () => {
   monthInput.value < 1 || monthInput.value > 12
-    ? (errorMonth.innerHTML = "Not a valid month")
-    : (errorMonth.innerHTML = "");
+    ? ((errorMonth.innerHTML = "Not a valid month"), errorState())
+    : ((errorMonth.innerHTML = ""), noError(this));
 });
 yearInput.addEventListener("input", () => {
   yearInput.value > currentDate.getFullYear()
-    ? (errorYear.innerHTML = "Year cannot be in the future")
-    : (errorYear.innerHTML = "");
+    ? ((errorYear.innerHTML = "Year cannot be in the future"), errorState())
+    : ((errorYear.innerHTML = ""), noError());
 });
-
 const errorState = () => {
-  const errorInput = document.querySelectorAll("input");
-  for (let i of errorInput) i.style.borderColor = "red";
+  for (let i of errorInput) i.style.borderColor = "hsl(0, 100%, 67%)";
+};
+
+const noError = (a) => {
+  console.log(a);
+  for (let i of errorInput) i.style.borderColor = "var(--purple)";
 };

@@ -13,10 +13,6 @@
   width: 100%;
 }
 
-label {
-  /* position: relative; */
-}
-
 input {
   font-size: calc(var(--font-input-size) - 50%) !important;
   padding: 10px 15px;
