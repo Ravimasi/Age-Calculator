@@ -39,15 +39,6 @@ span[id^="error"] {
   text-transform: none;
 }
 
-label.limitValue::after {
-  /* content: 'Value should be between 1~31'; */
-  justify-content: center;
-  color: red;
-  width: 25ch;
-  display: flex;
-  font-size: x-small;
-}
-
 @media screen and (min-width: 48rem) {
   input {
     display: grid;

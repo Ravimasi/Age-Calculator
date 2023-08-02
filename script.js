@@ -23,7 +23,7 @@ const calcAge = () => {
 
   if (calcDay < 0) {
     calcMonth -= 1;
-    calcDay += new Date(yearValue, monthValue - 1, 0).getDate();
+    calcDay += new Date(yearValue, monthValue, 0).getDate();
   }
   if (calcMonth < 0) {
     calcYear -= 1;
@@ -35,55 +35,70 @@ const calcAge = () => {
 };
 
 const button = document.querySelector("button");
-button.addEventListener("click", (e) => {
+button.addEventListener("click", () => {
   dayValue = parseInt(dayInput.value);
   monthValue = parseInt(monthInput.value);
   yearValue = parseInt(yearInput.value);
   calcAge();
-  if (dayValue > new Date(yearValue, monthValue, 0).getDate()) {
-    errorDay.innerHTML =
-      "This date does not exist in the selected month or year";
+  if (dayValue < 1 || dayValue > new Date(yearValue, monthValue, 0).getDate()) {
+    errorDay.innerHTML = "Must be a valid date";
+    errorMonth.innerHTML = "Must be a valid date";
+    errorYear.innerHTML = "Must be a valid date";
     resultDay.innerHTML = "- -";
     resultMonth.innerHTML = "- -";
     resultYear.innerHTML = "- -";
+    errorState();
   } else {
     errorDay.innerHTML = "";
+    errorMonth.innerHTML = "";
+    errorYear.innerHTML = "";
+  }
+  if (monthValue < 1 || monthValue > 12) {
+    errorMonth.innerHTML = "Must be a valid month";
+    // resultDay.innerHTML = "- -";
+    // resultMonth.innerHTML = "- -";
+    // resultYear.innerHTML = "- -";
+    errorState();
   }
   if (
     dayInput.value.trim() == "" ||
     monthInput.value.trim() == "" ||
     yearInput.value.trim() == ""
   ) {
-    if (dayInput.value == "") {
+    if (dayInput.value.trim() == "") {
       errorDay.innerHTML = "This field is required";
+      resultDay.innerHTML = "- -";
+      errorState();
     }
-    if (monthInput.value == "") {
+    if (monthInput.value.trim() == "") {
       errorMonth.innerHTML = "This field is required";
+      resultMonth.innerHTML = "- -";
+      errorState();
     }
-    if (yearInput.value == "") {
+    if (yearInput.value.trim() == "") {
       errorYear.innerHTML = "This field is required";
+      resultYear.innerHTML = "- -";
+      errorState();
     }
   }
 });
 dayInput.addEventListener("input", () => {
-  dayInput.value < 1 ||
-  dayInput.value > 31 ||
-  dayValue > new Date(yearValue, monthValue, 0).getDate()
-    ? ((errorDay.innerHTML = "Not a valid day"), errorState())
-    : ((errorDay.innerHTML = ""), noError(this));
+  (errorDay.innerHTML = ""), noError();
 });
 monthInput.addEventListener("input", () => {
-  monthInput.value < 1 || monthInput.value > 12
-    ? ((errorMonth.innerHTML = "Not a valid month"), errorState())
-    : ((errorMonth.innerHTML = ""), noError(this));
+  (errorMonth.innerHTML = ""), noError();
 });
 yearInput.addEventListener("input", () => {
-  yearInput.value > currentDate.getFullYear()
-    ? ((errorYear.innerHTML = "Year cannot be in the future"), errorState())
-    : ((errorYear.innerHTML = ""), noError());
+  if (yearInput.value > currentDate.getFullYear()) {
+    errorYear.innerHTML = "Must be in the past";
+    errorState();
+  } else (errorYear.innerHTML = ""), noError();
 });
 const errorState = () => {
   for (let i of errorInput) i.style.borderColor = "hsl(0, 100%, 67%)";
+  resultDay.innerHTML = "- -";
+  resultMonth.innerHTML = "- -";
+  resultYear.innerHTML = "- -";
 };
 
 const noError = (a) => {
